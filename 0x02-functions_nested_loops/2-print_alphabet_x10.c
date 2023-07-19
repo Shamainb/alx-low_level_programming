@@ -6,14 +6,20 @@
  */
 void print_alphabet_x10(void)
 {
-	int i = 0;
-	int alp;
+	char alp;
+	int i;
+
+	i = 0;
 
 	while (i < 10)
-	i++;
+	{
+		alp = 'a';
+		while (alp <= 'z')
 		{
-		for (alp = 97; alp <= 122; alp++)
-		putchar (alp);
+			putchar(alp);
+			alp++;
 		}
 		putchar('\n');
+		i++;
+	}
 }
