@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 	char c;
 	int i;
 	float f;
-	char * s;
+	char *s;
 	int idx = 0;
 
 	va_start(arg, format);
