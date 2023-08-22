@@ -1,33 +1,39 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/**
+ * print_strings - a function that prints strings
+ * @separator: string to be printed
+ * @n: number of strings
+ * Return: 0
+ */
+
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 
-    va_list args;
-    va_start(args, n);
+	va_list args;
 
-    for (i = 0; i < n; ++i) {
-        const char *str = va_arg(args, const char *);
-        
-        if (str != NULL) {
-            printf("%s", str);
-        } else {
-            printf("(nil)");
-        }
+	va_start(args, n);
 
-        if (i < n - 1 && separator != NULL) {
-            printf("%s", separator);
-        }
-    }
+	for (i = 0; i < n; ++i)
+	{
+		const char *str = va_arg(args, const char *);
 
-    va_end(args);
+		if (str != NULL)
+		{
+			printf("%s", str);
+		}
+		else
+		{
+			printf("(nil)");
+		}
+		if (i < n - 1 && separator != NULL)
+	{
+			printf("%s", separator);
+	}
+	}
+	va_end(args);
 
-    printf("\n");
-}
-
-int main() {
-    print_strings(", ", 5, "Hello", "World", NULL, "Goodbye", "C");
-    return 0;
+	printf("\n");
 }
