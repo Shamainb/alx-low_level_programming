@@ -8,18 +8,23 @@
  */
 int is_prime_number(int n)
 {
-	int i;
-
 	if (n <= 1)
 	{
 		return (0);
 	}
-	for (i = 2; i * i <= n;  i++)
-	{
-		if (n % i == 0)
-	{
+}
+
+/**
+ * actual_prime - check if the number is prime recursively
+ * @n: prime number
+ * @i: iterator
+ * Return: 1 or 0
+ */
+int actual_prime(int n, int i)
+{
+	if (i == 1)
+		return (1);
+	if (n % i == 0 && i > 0)
 		return (0);
-	}
-	}
-	return (1);
+	return (actual_prime(n, i - 1));
 }
