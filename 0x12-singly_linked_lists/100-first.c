@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void first(void) __attribute__ ((constructor));
+
 /**
  * first - print sentence before main
  */
