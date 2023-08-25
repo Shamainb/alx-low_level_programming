@@ -8,4 +8,4 @@ call printf
 pop rbp
 ret
 
-hello: db "Hello, Holberton\n",0
+hello: db "Hello, Holberton",0
