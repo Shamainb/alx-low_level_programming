@@ -9,8 +9,7 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int i;
-	int cnt = 0;
+	int i, cnt = 0;
 	unsigned long int c;
 	unsigned long int ex = n ^ m;
 
@@ -18,7 +17,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	{
 		c = ex >> i;
 		if (c & 1)
-			c++;
+			cnt++;
 	}
 	return (cnt);
 }
