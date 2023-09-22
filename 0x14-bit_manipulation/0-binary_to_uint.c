@@ -14,21 +14,11 @@ unsigned int binary_to_uint(const char *b)
 	if (!b)
 		return (0);
 
-	while (b[index] != '\0')
+	for (index = 0; b[index]; index++)
 	{
-		if (b[index] == '0')
-		{
-			r = r * 2;
-		}
-		else if (b[index] == '1')
-		{
-			r = r * 2 + 1;
-		}
-		else
-		{
+		if (b[index] < '0' || b[index] > '1')
 			return (0);
-		}
-		index++;
+		r = 2 * r + (b[index] - '0');
 	}
 	return (r);
 }
